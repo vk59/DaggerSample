@@ -1,14 +1,19 @@
 package com.vk59.daggersample
 
 import android.os.Bundle
-import android.view.ViewDebug
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import javax.inject.Inject
+import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
+    @Named("prod")
     @Inject
     lateinit var databaseHelper: DatabaseHelper
+
+    @Named("test")
+    @Inject
+    lateinit var databaseHelperTest: DatabaseHelper
+
     @Inject
     lateinit var networkUtils: NetworkUtils
 
